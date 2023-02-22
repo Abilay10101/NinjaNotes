@@ -1,17 +1,16 @@
 //
-//  Note.swift
+//  Note+CoreDataClass.swift
 //  NinjaNotes
 //
 //  Created by Arip Khozhbanov on 22.02.2023.
 //
+//
 
 import Foundation
+import CoreData
 
-class Note {
-    let id = UUID()
-    var text: String = ""
-    var lastUpdated: Date = Date()
-    
+@objc(Note)
+public class Note: NSManagedObject {
     var title: String {
         return text.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines).first ?? "" // returns the first line of the text
     }
@@ -21,4 +20,5 @@ class Note {
         lines.removeFirst()
         return "\(lastUpdated.format()) \(lines.first ?? "")" // return second line
     }
+
 }
