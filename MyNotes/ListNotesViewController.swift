@@ -32,6 +32,7 @@ class ListNotesViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         tableView.contentInset = .init(top: 0, left: 0, bottom: 30, right: 0)
         configureSearchBar()
+        fetchNotesFromStorage()
     }
     
     private func indexForNote(id: UUID, in list: [Note]) -> IndexPath {
@@ -59,11 +60,8 @@ class ListNotesViewController: UIViewController {
     
     // MARK:- Methods to implement
     private func createNote() -> Note {
-        let note = Note()
+        let note = CoreDataManager.shared.createNode()
         
-        // TODO Save note in database
-        
-        // Update table
         allNotes.insert(note, at: 0)
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
         
@@ -71,8 +69,7 @@ class ListNotesViewController: UIViewController {
     }
     
     private func fetchNotesFromStorage() {
-        // TODO Get all saved notes
-        print("Fetching all notes")
+        allNotes = CoreDataManager.shared.fetchNotes()
     }
     
     private func deleteNoteFromStorage(_ note: Note) {

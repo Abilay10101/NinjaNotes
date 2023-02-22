@@ -27,4 +27,28 @@ class CoreDataManager {
             completion?()
         }
     }
+    
+    func save() {
+        if viewContext.hasChanges {
+            try? viewContext.save()
+        }
+    }
+}
+
+extension CoreDataManager {
+    func createNode() -> Note{
+        let note = Note(context: viewContext)
+        note.id = UUID()
+        note.text = ""
+        note.lastUpdated = Date()
+        save()
+        return note
+    }
+    
+    func fetchNotes() -> [Note] {
+        let request: NSFetchRequest<Note> = Note.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(keyPath: \Note.lastUpdated, ascending: false)
+        request.sortDescriptors = [sortDescriptor]
+        return (try? viewContext.fetch(request)) ?? []
+    }
 }
