@@ -27,6 +27,7 @@
 		0B5D12B229A60A0900DFF3FB /* ListNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNotesViewController.swift; sourceTree = "<group>"; };
 		0B5D12B429A60A4800DFF3FB /* ListNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNoteTableViewCell.swift; sourceTree = "<group>"; };
 		0B5D12B629A6141000DFF3FB /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		0B86DB3629A65C1900CC41DF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0BD40F8829A61C14007D40DD /* NinjaNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NinjaNotes.xcdatamodel; sourceTree = "<group>"; };
 		0BD40F8A29A61DE2007D40DD /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0BD40F8B29A61DE2007D40DD /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 				124C538F26CE867800FDD253 /* Assets.xcassets */,
 				124C539126CE867800FDD253 /* LaunchScreen.storyboard */,
 				124C539426CE867800FDD253 /* Info.plist */,
+				0B86DB3629A65C1900CC41DF /* README.md */,
 			);
 			path = MyNotes;
 			sourceTree = SOURCE_ROOT;
