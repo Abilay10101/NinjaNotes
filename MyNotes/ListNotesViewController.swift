@@ -73,16 +73,13 @@ class ListNotesViewController: UIViewController {
     }
     
     private func deleteNoteFromStorage(_ note: Note) {
-        // TODO delete the note
-        print("Deleting note")
-        
-        // Update the list
         deleteNote(with: note.id)
+        CoreDataManager.shared.deleteNode(note)
     }
     
     private func searchNotesFromStorage(_ text: String) {
-        // TODO Get all notes that have this text
-        print("Searching notes")
+        allNotes = CoreDataManager.shared.fetchNotes(text)
+        tableView.reloadData()
     }
 }
 
